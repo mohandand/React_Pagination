@@ -14,3 +14,15 @@
   overflow: visible;
   margin-top: 3px;
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.page-item {
+  margin: 5px;
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: crimson;
+  color: white;
+}

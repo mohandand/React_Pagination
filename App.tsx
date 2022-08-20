@@ -22,6 +22,10 @@ export default function App() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
+  function paginate(page) {
+    setCurrentPage(page);
+  }
+
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -29,7 +33,11 @@ export default function App() {
   return (
     <div>
       <Posts posts={currentPosts} losding={loading} />
-      <Pagination totalPosts={posts.length} postsPerPage={postsPerPage} />
+      <Pagination
+        totalPosts={posts.length}
+        postsPerPage={postsPerPage}
+        paginate={paginate}
+      />
     </div>
   );
 }
